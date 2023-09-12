@@ -12,9 +12,11 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	var A = int($lineEdit.text)
-	var B = int($lineEdit2.text)
-	var C = int($lineEdit3.text)
+	var A = int($LineEdit.text)
+	var B = int($LineEdit2.text)
+	var C = int($LineEdit3.text)
+	var root = str(-B + (sqrt(B*B) - (4 * (A*C))) / (2 * A))
+	$lblOut.text = "The root is " + root
 
 
 func _on_button_2_pressed():
