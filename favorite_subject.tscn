@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://cafyal6fm3cul"]
+
+[ext_resource type="Script" path="res://FavoriteSubject.gd" id="1_fj3d6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tkndc"]
+font_size = 40
+
+[node name="FavoriteSubject" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fj3d6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 4.0
+offset_right = 875.0
+offset_bottom = 367.0
+label_settings = SubResource("LabelSettings_tkndc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 437.0
+offset_right = 436.0
+offset_bottom = 530.0
+text = "Show"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 439.0
+offset_right = 813.0
+offset_bottom = 532.0
+text = "Clear"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

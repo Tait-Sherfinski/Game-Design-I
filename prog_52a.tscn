@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxp0vlpnf2fsb"]
+
+[ext_resource type="Script" path="res://Prog52a.gd" id="1_2osla"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bq14i"]
+font_size = 40
+
+[node name="Prog52a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2osla")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 346.0
+offset_bottom = 196.0
+text = "Length: "
+label_settings = SubResource("LabelSettings_bq14i")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 197.0
+offset_right = 346.0
+offset_bottom = 393.0
+text = "Width:"
+label_settings = SubResource("LabelSettings_bq14i")
+horizontal_alignment = 1
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 1.0
+offset_right = 1150.0
+offset_bottom = 273.0
+label_settings = SubResource("LabelSettings_bq14i")
+horizontal_alignment = 1
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 567.0
+offset_right = 196.0
+offset_bottom = 649.0
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 565.0
+offset_right = 637.0
+offset_bottom = 647.0
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 953.0
+offset_top = 564.0
+offset_right = 1147.0
+offset_bottom = 646.0
+text = "Exit"
+
+[node name="txtLen" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_right = 735.0
+offset_bottom = 85.0
+
+[node name="txtWid" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 178.0
+offset_right = 732.0
+offset_bottom = 263.0
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]
