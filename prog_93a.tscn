@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://b44wh2i5b0h1d"]
+
+[ext_resource type="Script" path="res://Prog93a.gd" id="1_e4ado"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tmvmw"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_g57ar"]
+font_size = 30
+
+[node name="Prog93a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e4ado")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 386.0
+offset_bottom = 126.0
+text = "Kilowatts Used: "
+label_settings = SubResource("LabelSettings_tmvmw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 16.0
+offset_right = 738.0
+offset_bottom = 118.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 3.0
+offset_right = 1151.0
+offset_bottom = 136.0
+text = "Calculate"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 916.0
+offset_top = 247.0
+offset_right = 1148.0
+offset_bottom = 380.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 922.0
+offset_top = 516.0
+offset_right = 1154.0
+offset_bottom = 649.0
+text = "Exit"
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 230.0
+offset_right = 739.0
+offset_bottom = 529.0
+label_settings = SubResource("LabelSettings_g57ar")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
