@@ -15,9 +15,9 @@ func _on_button_pressed():
 	var A = int($LineEdit.text)
 	var B = int($LineEdit2.text)
 	var C = int($LineEdit3.text)
-	var posroot = str(-B + (sqrt(B*B) - (4 * (A*C))) / (2 * A))
-	var negroot = str(-B - (sqrt(B*B) - (4 * (A*C))) / (2 * A))
-	$lblOut.text = "The roots are " + posroot + " and " + negroot
+	var root = (-B + sqrt((B*B) - (4*(A*C)))) / 2 * A
+	var root2 = (-B - sqrt((B*B) - (4*(A*C)))) / 2 * A
+	$lblOut.text = "The roots are " + str(root) + " and " + str(root2)
 
 
 func _on_button_2_pressed():
@@ -28,4 +28,4 @@ func _on_button_2_pressed():
 
 
 func _on_button_3_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
