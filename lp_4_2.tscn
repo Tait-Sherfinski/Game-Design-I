@@ -1,0 +1,122 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0gdt75wae6g3"]
+
+[ext_resource type="Script" path="res://LP4-2.gd" id="1_qpbxf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v4n68"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_c5xgk"]
+font_size = 30
+
+[node name="LP4-2" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qpbxf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 335.0
+offset_bottom = 147.0
+text = "Enter weight in kilograms: "
+label_settings = SubResource("LabelSettings_v4n68")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 130.0
+offset_right = 271.0
+offset_bottom = 277.0
+text = "Enter length in cm: "
+label_settings = SubResource("LabelSettings_v4n68")
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 281.0
+offset_right = 241.0
+offset_bottom = 428.0
+text = "Enter width in cm: "
+label_settings = SubResource("LabelSettings_v4n68")
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 430.0
+offset_right = 272.0
+offset_bottom = 577.0
+text = "Enter height in cm: "
+label_settings = SubResource("LabelSettings_v4n68")
+vertical_alignment = 1
+
+[node name="txtWeight" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 12.0
+offset_right = 694.0
+offset_bottom = 141.0
+
+[node name="txtLen" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 162.0
+offset_right = 698.0
+offset_bottom = 291.0
+
+[node name="txtWid" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 348.0
+offset_top = 304.0
+offset_right = 696.0
+offset_bottom = 433.0
+
+[node name="txtHeight" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 453.0
+offset_right = 700.0
+offset_bottom = 582.0
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 420.0
+offset_right = 1130.0
+offset_bottom = 630.0
+label_settings = SubResource("LabelSettings_c5xgk")
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 14.0
+offset_right = 1122.0
+offset_bottom = 128.0
+text = "Calculate
+"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 155.0
+offset_right = 1123.0
+offset_bottom = 269.0
+text = "Clear
+"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 301.0
+offset_right = 1122.0
+offset_bottom = 415.0
+text = "Exit
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
