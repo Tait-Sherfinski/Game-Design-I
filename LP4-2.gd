@@ -25,6 +25,8 @@ func _on_button_pressed():
 		$lblOut.text = "Too Heavy and Too Large"
 	elif weight < 27 and size < 100000:
 		$lblOut.text = "Valid"
+	elif weight < 0 or size < 0:
+		$lblOut.text = "Please enter a valid number"
 	
 	
 	
@@ -36,6 +38,7 @@ func _on_button_2_pressed():
 	$txtLen.text = ""
 	$txtWid.text = ""
 	$txtHeight.text = ""
+	$lblOut.text = ""
 
 
 func _on_button_3_pressed():
