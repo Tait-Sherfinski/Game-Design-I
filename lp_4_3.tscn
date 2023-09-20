@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfs7owl57vjvl"]
+
+[ext_resource type="Script" path="res://LP4-3.gd" id="1_lu232"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n8rd3"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6buu"]
+font_size = 40
+
+[node name="LP4-3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lu232")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 582.0
+offset_bottom = 161.0
+text = "Enter the number of eggs"
+label_settings = SubResource("LabelSettings_n8rd3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="txtEggs" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 10.0
+offset_right = 1013.0
+offset_bottom = 160.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 522.0
+offset_right = 248.0
+offset_bottom = 649.0
+text = "Calculate"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 519.0
+offset_right = 680.0
+offset_bottom = 646.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 519.0
+offset_right = 1146.0
+offset_bottom = 646.0
+text = "Exit"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 211.0
+offset_right = 1034.0
+offset_bottom = 456.0
+label_settings = SubResource("LabelSettings_i6buu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
