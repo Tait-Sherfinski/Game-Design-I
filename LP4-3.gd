@@ -13,20 +13,25 @@ func _process(delta):
 
 func _on_button_pressed():
 	var eggs = int($txtEggs.text)
-	var dozen = int(eggs / 12)
 	var price = 0.0
 	var cost = 0.0
-	var extra = eggs % (dozen * 12)
-	var extrap = (price * (1/12)) * extra
-	if dozen < 4:
+	if eggs < 48:
 		price = 0.50
-	elif dozen >= 4 and dozen < 6:
+	elif eggs >= 48 and eggs < 72:
 		price = 0.45
-	elif dozen >= 6 and dozen < 11:
+	elif eggs >= 72 and eggs < 132:
 		price = 0.40
-	elif dozen >= 11:
+	elif eggs >= 132:
 		price = 0.35
 		return
-			
-	cost = (price * dozen) + extrap
+		
+	cost = price * eggs
 	$Label2.text = "The bill is $" + str(cost)
+
+
+func _on_button_2_pressed():
+	$Label2.text = ""
+
+
+func _on_button_3_pressed():
+	get_tree().quit()

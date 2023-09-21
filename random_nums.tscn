@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://12np8jd7l0gk"]
+
+[ext_resource type="Script" path="res://random_nums.gd" id="1_vbylo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ovamp"]
+font_size = 40
+
+[node name="random_nums" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vbylo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 31.0
+offset_right = 1101.0
+offset_bottom = 404.0
+label_settings = SubResource("LabelSettings_ovamp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 468.0
+offset_right = 658.0
+offset_bottom = 608.0
+text = "Calc"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
