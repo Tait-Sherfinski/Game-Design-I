@@ -13,6 +13,8 @@ func _process(delta):
 
 func _on_btn_calc_pressed():
 	$ItemList.add_item("Number")
+	# range(start, stop) or
+	# range(start, stop, step)
 	for num in range(2, 36+1, 2):
 		var line = "%d" % num
 		$ItemList.add_item(line)
