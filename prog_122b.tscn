@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dij11lwfk4jgg"]
+
+[ext_resource type="Script" path="res://Prog122b.gd" id="1_wdtfr"]
+
+[node name="Prog122b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wdtfr")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 48.0
+offset_right = 985.0
+offset_bottom = 416.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 487.0
+offset_right = 346.0
+offset_bottom = 576.0
+text = "Show"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 494.0
+offset_right = 666.0
+offset_bottom = 583.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 485.0
+offset_right = 991.0
+offset_bottom = 574.0
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
