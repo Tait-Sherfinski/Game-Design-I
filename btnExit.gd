@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,9 +12,7 @@ func _process(delta):
 
 
 func _on_btn_calc_pressed():
-	$ItemList.add_Item("Number")
-	# range(start, stop) or
-	# range(start, stop, step)
+	$ItemList.add_item("Number")
 	for num in range(2, 36+1, 2):
 		var line = "%d" % num
 		$ItemList.add_item(line)

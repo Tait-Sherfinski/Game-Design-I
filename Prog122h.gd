@@ -18,7 +18,9 @@ func _on_button_pressed():
 		var sqrt = sqrt(num)
 		var cube = num*num*num
 		var froot = sqrt(sqrt)
-		var line = "%d     %d     %.4f     %d     %.4f" % [num, square, sqrt, cube, froot]
+		var line = "%d               %d              \
+		 %.4f               %d              \
+		 %.4f" % [num, square, sqrt, cube, froot]
 		$ItemList.add_item(line)
 
 

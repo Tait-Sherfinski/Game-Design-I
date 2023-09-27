@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2cs7k")
 
 [node name="ItemList" type="ItemList" parent="."]
 layout_mode = 0
@@ -40,7 +41,6 @@ offset_top = 513.0
 offset_right = 1095.0
 offset_bottom = 631.0
 text = "Exit"
-script = ExtResource("1_2cs7k")
 
 [connection signal="pressed" from="btnCalc" to="btnExit" method="_on_btn_calc_pressed"]
 [connection signal="pressed" from="btnClear" to="btnExit" method="_on_btn_clear_pressed"]

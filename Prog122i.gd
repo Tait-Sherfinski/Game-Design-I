@@ -15,8 +15,12 @@ func _on_button_pressed():
 	$ItemList.add_item("Number     Cube Root     Cube")
 	for num in range(-25, 25+1):
 		var cube = num*num*num
-		var cbrt = num**0.333333333
-		var line = "%d     %.5f     %d" % [num, cbrt, cube]
+		var cbexp = 1.0 / 3.0
+		var cbrt = num**cbexp
+		if num < 0:
+			cbrt = ((abs(num)**cbexp) * -2) / 2
+		var line = "%d               %.5f              \
+		 %d" % [num, cbrt, cube]
 		$ItemList.add_item(line)
 
 
