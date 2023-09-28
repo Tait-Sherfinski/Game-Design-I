@@ -14,7 +14,7 @@ func _process(delta):
 func _on_button_pressed():
 	for num in range(2, 36+1, 2):
 		var line = "%d" % num
-		$ItemList.add_item(line)
+		$Label.text = line
 
 
 func _on_button_2_pressed():

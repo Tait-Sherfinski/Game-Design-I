@@ -35,12 +35,12 @@ offset_right = 1065.0
 offset_bottom = 605.0
 text = "Exit"
 
-[node name="ItemList" type="ItemList" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 134.0
-offset_top = 54.0
-offset_right = 976.0
-offset_bottom = 331.0
+offset_left = 200.0
+offset_top = 34.0
+offset_right = 955.0
+offset_bottom = 387.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
