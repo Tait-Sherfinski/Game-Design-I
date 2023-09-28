@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://4dkqkuyhtkup"]
+
+[ext_resource type="Script" path="res://Prog152aWhile.gd" id="1_h0obr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1w6m2"]
+font_size = 20
+
+[node name="Prog152aWhile" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h0obr")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 18.0
+offset_right = 570.0
+offset_bottom = 409.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 480.0
+offset_right = 329.0
+offset_bottom = 598.0
+text = "Show"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 482.0
+offset_right = 643.0
+offset_bottom = 600.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 817.0
+offset_top = 475.0
+offset_right = 965.0
+offset_bottom = 593.0
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 32.0
+offset_right = 1136.0
+offset_bottom = 407.0
+label_settings = SubResource("LabelSettings_1w6m2")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
