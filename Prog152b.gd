@@ -12,17 +12,11 @@ func _process(delta):
 
 
 func _on_button_pressed():
+	var num = int($LineEdit.text)
 	var Sum = 0
-	var lcv = 3
-	while lcv <= 9669:
+	var lcv = 0
+	while lcv < num:
 		Sum += lcv
-		$ItemList.add_item(str(Sum))
-		lcv += 3
-
-
-func _on_button_2_pressed():
-	$ItemList.clear()
-
-
-func _on_button_3_pressed():
-	get_tree().quit()
+		lcv += 2
+		var line = "%d     %d" % [lcv, Sum]
+		$ItemList.add_item(line)
