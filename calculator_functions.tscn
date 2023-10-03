@@ -1,0 +1,142 @@
+[gd_scene load_steps=4 format=3 uid="uid://bujxr1vuowqy4"]
+
+[ext_resource type="Script" path="res://CalculatorFunctions.gd" id="1_oft8w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k4en7"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_qkoas"]
+font_size = 35
+
+[node name="CalculatorFunctions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oft8w")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 45.0
+offset_right = 280.0
+offset_bottom = 128.0
+text = "First Number: "
+label_settings = SubResource("LabelSettings_k4en7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 162.0
+offset_right = 278.0
+offset_bottom = 245.0
+text = "Second Number: "
+label_settings = SubResource("LabelSettings_k4en7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 287.0
+offset_right = 275.0
+offset_bottom = 370.0
+text = "Operation: "
+label_settings = SubResource("LabelSettings_k4en7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 45.0
+offset_right = 634.0
+offset_bottom = 135.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 153.0
+offset_right = 634.0
+offset_bottom = 243.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.01
+offset_left = 301.0
+offset_top = 274.0
+offset_right = 361.48
+offset_bottom = 310.0
+text = "+"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.01
+offset_left = 416.0
+offset_top = 274.0
+offset_right = 479.48
+offset_bottom = 310.0
+text = "-"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.01
+offset_left = 540.0
+offset_top = 274.0
+offset_right = 603.48
+offset_bottom = 310.0
+text = "*"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.01
+offset_left = 302.0
+offset_top = 350.0
+offset_right = 365.48
+offset_bottom = 386.0
+text = "**"
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.01
+offset_left = 414.0
+offset_top = 347.0
+offset_right = 477.48
+offset_bottom = 383.0
+text = "/"
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.01
+offset_left = 541.0
+offset_top = 345.0
+offset_right = 604.48
+offset_bottom = 381.0
+text = "Mod"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_top = 451.0
+offset_right = 329.0
+offset_bottom = 547.0
+text = "Result: "
+label_settings = SubResource("LabelSettings_qkoas")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
