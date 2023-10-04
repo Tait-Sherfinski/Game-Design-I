@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://boeo76svt30eq"]
+
+[ext_resource type="Script" path="res://Prog54cFunc.gd" id="1_1f8c2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjgpb"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_eio1j"]
+font_size = 40
+
+[node name="Prog54cFunc" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1f8c2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 32.0
+offset_right = 381.0
+offset_bottom = 161.0
+text = "Radius: "
+label_settings = SubResource("LabelSettings_tjgpb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 49.0
+offset_right = 684.0
+offset_bottom = 146.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 174.0
+offset_right = 982.0
+offset_bottom = 444.0
+label_settings = SubResource("LabelSettings_eio1j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 512.0
+offset_right = 278.0
+offset_bottom = 611.0
+text = "Calculate"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 454.0
+offset_top = 504.0
+offset_right = 688.0
+offset_bottom = 603.0
+text = "Clear"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 504.0
+offset_right = 1111.0
+offset_bottom = 603.0
+text = "Exit"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
