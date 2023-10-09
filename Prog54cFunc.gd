@@ -1,11 +1,14 @@
 extends Control
 
+
+var pi = 3.14159
+
 func getArea(radius):
-	var area = 3.14 * (radius * radius)
+	var area = pi * (radius * radius)
 	return area
 	
 func getCirc(radius):
-	var circ = (radius * 2) * 3.14
+	var circ = (radius * 2) * pi
 	return circ
 
 
@@ -23,7 +26,7 @@ func _on_button_pressed():
 	var radius = float($LineEdit.text)
 	var a = getArea(radius)
 	var c = getCirc(radius)
-	$Label2.text = "Area: %.3f\nCircumference: %.3f" % [a, c]
+	$Label2.text = "Area: %.1f\nCircumference: %.1f" % [a, c]
 
 
 func _on_button_2_pressed():

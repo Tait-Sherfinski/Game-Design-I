@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwxk0skavf7gc"]
+
+[ext_resource type="Script" path="res://Keyboard_player.gd" id="1_g1cox"]
+[ext_resource type="Texture2D" uid="uid://q1ykm673elox" path="res://icon.svg" id="2_clcgu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xi5rx"]
+radius = 16.0
+height = 56.0
+
+[node name="Keyboard_player" type="CharacterBody2D"]
+position = Vector2(-2, 54)
+script = ExtResource("1_g1cox")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(49.875, 52.75)
+scale = Vector2(0.267578, 0.488281)
+texture = ExtResource("2_clcgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50, 54)
+shape = SubResource("CapsuleShape2D_xi5rx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
