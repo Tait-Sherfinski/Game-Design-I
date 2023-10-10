@@ -7,5 +7,24 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
+func _on_interact_mouse_entered():
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		$Interact.queue_free()
+		
+var dragging = false
+var offset = Vector2.ZERO
+
 func _process(delta):
-	pass
+	if dragging:
+		$Draggable.global_position = get_global_mouse_position() - offset
+
+
+func _on_button_button_down():
+	dragging = true
+	offset = get_global_mouse_position() - $Draggable.global_position
+
+
+func _on_button_button_up():
+	dragging = false
