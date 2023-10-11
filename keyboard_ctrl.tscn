@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgtcqkf2wlq6c"]
+[gd_scene load_steps=8 format=3 uid="uid://bgtcqkf2wlq6c"]
 
 [ext_resource type="Script" path="res://keyboard_ctrl.gd" id="1_pp1xf"]
 [ext_resource type="PackedScene" uid="uid://cwxk0skavf7gc" path="res://keyboard_player.tscn" id="2_j7f7y"]
+[ext_resource type="PackedScene" uid="uid://cs7h3nmncy04j" path="res://kbdenemy.tscn" id="3_x20lc"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_boy1w"]
 b = Vector2(187, 0)
@@ -50,7 +51,7 @@ position = Vector2(24, 24)
 shape = SubResource("RectangleShape2D_piaud")
 
 [node name="Draggable" type="RigidBody2D" parent="."]
-position = Vector2(-24, -24)
+position = Vector2(376, 26)
 freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Draggable"]
@@ -67,6 +68,10 @@ offset_left = -1.0
 offset_right = 49.0
 offset_bottom = 48.0
 focus_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="kbdenemy" parent="." instance=ExtResource("3_x20lc")]
+max_contacts_reported = 1
 
 [connection signal="mouse_entered" from="Interact" to="." method="_on_interact_mouse_entered"]
 [connection signal="button_down" from="Draggable/Button" to="." method="_on_button_button_down"]
