@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://55alcii5q7s3"]
+
+[ext_resource type="Script" path="res://Platformer.gd" id="1_a8jvn"]
+[ext_resource type="PackedScene" uid="uid://cwxk0skavf7gc" path="res://keyboard_player.tscn" id="2_hh66j"]
+[ext_resource type="PackedScene" uid="uid://cs7h3nmncy04j" path="res://kbdenemy.tscn" id="3_uoe7g"]
+[ext_resource type="PackedScene" uid="uid://bjdpk2mde5oyk" path="res://exit.tscn" id="4_fpwsj"]
+[ext_resource type="Script" path="res://exit.gd" id="5_86wn7"]
+
+[node name="Platformer" type="Node2D"]
+script = ExtResource("1_a8jvn")
+
+[node name="Keyboard_player" parent="." instance=ExtResource("2_hh66j")]
+position = Vector2(17, 71)
+
+[node name="kbdenemy" parent="." instance=ExtResource("3_uoe7g")]
+position = Vector2(250, 330)
+max_contacts_reported = 1
+
+[node name="kbdenemy2" parent="." instance=ExtResource("3_uoe7g")]
+position = Vector2(717, 534)
+max_contacts_reported = 1
+
+[node name="World" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
+position = Vector2(5, 11)
+polygon = PackedVector2Array(16, 36, 43, 211, 154, 211, 161, 327, 339, 343, 353, 206, 489, 208, 521, 539, 858.884, 530.308, 852, 418, 1021, 421, 1142, -3, 1142, 637, 5, 642)
+
+[node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
+
+[node name="Exit" parent="." instance=ExtResource("4_fpwsj")]
+position = Vector2(987, 393)
+script = ExtResource("5_86wn7")
+
+[connection signal="body_entered" from="kbdenemy" to="." method="_on_kbdenemy_body_entered"]
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

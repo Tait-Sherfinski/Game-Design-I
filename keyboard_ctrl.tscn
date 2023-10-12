@@ -33,12 +33,12 @@ texture = SubResource("PlaceholderTexture2D_s7003")
 [node name="world" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
-polygon = PackedVector2Array(8, 543, 181, 540, 178, 464, 260, 462, 259, 540, 335, 539, 330, 616, 443, 616, 755, 483, 1146, 618, 3, 628)
+polygon = PackedVector2Array(8, 543, 181, 540, 178, 464, 260, 462, 259, 540, 335, 539, 330, 616, 443, 616, 1062, 434, 1146, 618, 3, 628)
 
 [node name="Polygon2D" type="Polygon2D" parent="world/CollisionPolygon2D"]
 
 [node name="Interact" type="RigidBody2D" parent="."]
-position = Vector2(251, 386)
+position = Vector2(384, 569)
 freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Interact"]
@@ -51,7 +51,7 @@ position = Vector2(24, 24)
 shape = SubResource("RectangleShape2D_piaud")
 
 [node name="Draggable" type="RigidBody2D" parent="."]
-position = Vector2(376, 26)
+position = Vector2(126, 85)
 freeze = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Draggable"]
@@ -71,6 +71,7 @@ focus_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="kbdenemy" parent="." instance=ExtResource("3_x20lc")]
+position = Vector2(958, 451)
 max_contacts_reported = 1
 
 [connection signal="mouse_entered" from="Interact" to="." method="_on_interact_mouse_entered"]
