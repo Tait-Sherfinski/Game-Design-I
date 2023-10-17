@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://55alcii5q7s3"]
+[gd_scene load_steps=8 format=3 uid="uid://55alcii5q7s3"]
 
 [ext_resource type="Script" path="res://Platformer.gd" id="1_a8jvn"]
 [ext_resource type="PackedScene" uid="uid://cwxk0skavf7gc" path="res://keyboard_player.tscn" id="2_hh66j"]
 [ext_resource type="PackedScene" uid="uid://cs7h3nmncy04j" path="res://kbdenemy.tscn" id="3_uoe7g"]
 [ext_resource type="PackedScene" uid="uid://bjdpk2mde5oyk" path="res://exit.tscn" id="4_fpwsj"]
 [ext_resource type="Script" path="res://exit.gd" id="5_86wn7"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y58ja"]
+b = Vector2(187, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pyndh"]
 
 [node name="Platformer" type="Node2D"]
 script = ExtResource("1_a8jvn")
@@ -31,5 +36,17 @@ polygon = PackedVector2Array(16, 36, 43, 211, 154, 211, 161, 327, 339, 343, 353,
 [node name="Exit" parent="." instance=ExtResource("4_fpwsj")]
 position = Vector2(983, 397)
 script = ExtResource("5_86wn7")
+
+[node name="startplatform" type="StaticBody2D" parent="."]
+position = Vector2(588, 328)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="startplatform"]
+visible = false
+shape = SubResource("SegmentShape2D_y58ja")
+
+[node name="Sprite2D" type="Sprite2D" parent="startplatform"]
+position = Vector2(92.75, -0.25)
+scale = Vector2(186.5, 0.5)
+texture = SubResource("PlaceholderTexture2D_pyndh")
 
 [connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]
