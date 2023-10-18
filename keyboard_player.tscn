@@ -82,7 +82,7 @@ animations = [{
 }]
 
 [node name="Keyboard_player" type="CharacterBody2D"]
-position = Vector2(-2, 54)
+position = Vector2(2, 58)
 script = ExtResource("1_g1cox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -100,10 +100,11 @@ position = Vector2(50, 60)
 shape = SubResource("CapsuleShape2D_xi5rx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(50, 59)
 zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(49, 51)
+position = Vector2(49, 50)
 scale = Vector2(1.75, 2.125)
 sprite_frames = SubResource("SpriteFrames_n5odf")
 animation = &"jump"

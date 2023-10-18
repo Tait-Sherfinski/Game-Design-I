@@ -15,7 +15,7 @@ b = Vector2(187, 0)
 script = ExtResource("1_a8jvn")
 
 [node name="Keyboard_player" parent="." instance=ExtResource("2_hh66j")]
-position = Vector2(51, 136)
+position = Vector2(66, 134)
 
 [node name="kbdenemy" parent="." instance=ExtResource("3_uoe7g")]
 position = Vector2(250, 330)
