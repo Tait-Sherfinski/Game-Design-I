@@ -7,7 +7,3 @@ func _ready():
 
 
 
-func _on_exit_body_entered(body):
-	if body.name == "Keyboard_player":
-		OS.alert("You won!")
-		body.queue_free()

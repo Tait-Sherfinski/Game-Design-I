@@ -36,6 +36,7 @@ polygon = PackedVector2Array(16, 36, 43, 211, 154, 211, 161, 327, 339, 343, 353,
 [node name="Exit" parent="." instance=ExtResource("4_fpwsj")]
 position = Vector2(983, 397)
 script = ExtResource("5_86wn7")
+next_level = "kbd_world2"
 
 [node name="startplatform" type="StaticBody2D" parent="."]
 position = Vector2(588, 328)
