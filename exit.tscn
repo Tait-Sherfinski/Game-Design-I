@@ -9,8 +9,8 @@ size = Vector2(79, 68)
 position = Vector2(1106, 374)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(10, 0.500004)
-scale = Vector2(0.323, 0.26)
+position = Vector2(10, -16.5)
+scale = Vector2(0.323, 0.396)
 texture = ExtResource("1_6v8y4")
 hframes = 2
 vframes = 2
