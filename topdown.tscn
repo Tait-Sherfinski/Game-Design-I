@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://pjtmhsd5kg3a"]
+
+[ext_resource type="Script" path="res://TDplayer.gd" id="1_jaqct"]
+[ext_resource type="Texture2D" uid="uid://q1ykm673elox" path="res://icon.svg" id="2_bu2tg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewfct"]
+size = Vector2(106, 106)
+
+[node name="topdown" type="Node2D"]
+
+[node name="TDplayer" type="CharacterBody2D" parent="."]
+position = Vector2(200, 134)
+script = ExtResource("1_jaqct")
+
+[node name="Sprite2D" type="Sprite2D" parent="TDplayer"]
+scale = Vector2(0.828125, 0.828125)
+texture = ExtResource("2_bu2tg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TDplayer"]
+visible = false
+shape = SubResource("RectangleShape2D_ewfct")
