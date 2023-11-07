@@ -18,10 +18,10 @@ func _physics_process(delta):
 	var direction = Vector2(
 		Input.get_axis("ui_left", "ui_right"),
 		Input.get_axis("ui_up", "ui_down")
-	)
+	).normalized()
+	update_animation(direction)
 	if direction.length() > 0:
 		look_direction = direction
-		direction = direction.normalized()
 		velocity = direction * SPEED
 	else:
 		velocity = velocity.move_toward(Vector2(), SPEED)
@@ -33,4 +33,19 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		menu_instance.show()
 		get_tree().paused = true
+		
+func update_animation(direction):
+	var a_name = "idle"
+	if direction.length() > 0:
+		look_direction = direction
+		a_name = "walk_"
+		if direction.x != 0:
+			a_name += "side"
+			$AnimatedSprite2D.flip_h = direction.x < 0
+		elif direction.y < 0:
+			a_name += "up"
+		elif direction.y > 0:
+			a_name += "down"
+	else:
+		pass
 	
