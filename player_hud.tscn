@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsptgsuhfquac"]
+[gd_scene load_steps=4 format=3 uid="uid://bsptgsuhfquac"]
 
 [ext_resource type="Script" path="res://PlayerHUD.gd" id="1_leic5"]
 [ext_resource type="Texture2D" uid="uid://cc6ln6a0bxpt0" path="res://Assets/objects.png" id="2_yckuh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2lh4o"]
+font_size = 30
 
 [node name="PlayerHUD" type="CanvasLayer"]
 script = ExtResource("1_leic5")
@@ -19,3 +22,29 @@ texture = ExtResource("2_yckuh")
 hframes = 33
 vframes = 20
 frame = 8
+
+[node name="Money" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 584.0
+offset_right = 24.0
+offset_bottom = 600.0
+
+[node name="CoinsSprite" type="Sprite2D" parent="Money"]
+position = Vector2(24, 24)
+scale = Vector2(4, 4)
+texture = ExtResource("2_yckuh")
+hframes = 33
+vframes = 20
+frame = 132
+
+[node name="CoinsLabel" type="Label" parent="Money"]
+layout_mode = 0
+offset_left = 56.0
+offset_right = 184.0
+offset_bottom = 48.0
+text = "000
+"
+label_settings = SubResource("LabelSettings_2lh4o")
+vertical_alignment = 1

@@ -8,6 +8,7 @@ const MAX_OBTAINABLE_HEALTH = 400.0
 @export var data = {
 	"max_health": 60.0,
 	"health": 60.0,
+	"money": 0.0
 }
 
 var inertia = Vector2()

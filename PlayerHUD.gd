@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var hearts = $PlayerHealth/Hearts
+@onready var coins = $Money/CoinsSprite
 
 const HEART_ROW_SIZE = 10
 const HEART_OFFSET = 16
@@ -36,3 +37,9 @@ func _process(delta):
 		var x = (index % HEART_ROW_SIZE) * HEART_OFFSET
 		var y = (index / HEART_ROW_SIZE) * HEART_OFFSET
 		heart.position = Vector2(x, y)
+		if index > full_hearts:
+			heart.frame = 0
+		elif index == full_hearts:
+			heart.frame = 8 - int(remainder / 5)
+		elif index < full_hearts:
+			heart.frame = 4
