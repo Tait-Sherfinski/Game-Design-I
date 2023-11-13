@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://conffcpqduauk"]
+
+[ext_resource type="Script" path="res://HighScores.gd" id="1_bdo1c"]
+
+[node name="HighScores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bdo1c")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_top = 552.0
+offset_right = 384.0
+offset_bottom = 647.0
+text = "Add Score"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 552.0
+offset_right = 1154.0
+offset_bottom = 647.0
+text = "Remove Score"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 454.0
+offset_right = 382.0
+offset_bottom = 510.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 450.0
+offset_right = 1145.0
+offset_bottom = 506.0
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 434.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
