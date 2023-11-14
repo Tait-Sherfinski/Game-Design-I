@@ -19,6 +19,9 @@ var menu_instance = null
 
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 
+func pickup_money(value):
+	data.money += value
+
 func _ready():
 	p_HUD.show()
 	menu_instance = menu_scene.instantiate()

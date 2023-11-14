@@ -1,151 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://pjtmhsd5kg3a"]
+[gd_scene load_steps=9 format=3 uid="uid://pjtmhsd5kg3a"]
 
-[ext_resource type="Script" path="res://TDplayer.gd" id="1_jaqct"]
-[ext_resource type="Texture2D" uid="uid://d2wc7u4l41hra" path="res://Assets/character.png" id="2_s7lvv"]
+[ext_resource type="PackedScene" uid="uid://k6otf2etcklq" path="res://td_player.tscn" id="1_ie81a"]
 [ext_resource type="Texture2D" uid="uid://duwoti5uipg8e" path="res://Assets/Overworld.png" id="3_hamab"]
+[ext_resource type="PackedScene" uid="uid://wkmrf115r4r2" path="res://change_lvl.tscn" id="4_g636m"]
 [ext_resource type="PackedScene" uid="uid://bsptgsuhfquac" path="res://player_hud.tscn" id="4_vgikf"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pygns"]
-radius = 16.0
-height = 46.0
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xtie"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6eak"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(0, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfvun"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(0, 64, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rq388"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(0, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r0imo"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(16, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kxwmq"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(32, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m50g0"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(48, 0, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bpi8s"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(0, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4jm1"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(16, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_luiug"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(32, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rmtvk"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(48, 32, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j6cy4"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(48, 64, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pxapq"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(32, 64, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_afg6p"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(16, 64, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qd33w"]
-atlas = ExtResource("2_s7lvv")
-region = Rect2(0, 64, 16, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mjxps"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8xtie")
-}],
-"loop": true,
-"name": &"idle_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v6eak")
-}],
-"loop": true,
-"name": &"idle_side",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cfvun")
-}],
-"loop": true,
-"name": &"idle_up",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rq388")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r0imo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kxwmq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m50g0")
-}],
-"loop": true,
-"name": &"walk_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bpi8s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s4jm1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_luiug")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rmtvk")
-}],
-"loop": true,
-"name": &"walk_side",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j6cy4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pxapq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_afg6p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qd33w")
-}],
-"loop": true,
-"name": &"walk_up",
-"speed": 5.0
-}]
+[ext_resource type="Script" path="res://change_lvl.gd" id="5_5lgjy"]
+[ext_resource type="PackedScene" uid="uid://cobxdeswatcyx" path="res://entities/coin.tscn" id="6_54fn0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwo5h"]
 texture = ExtResource("3_hamab")
@@ -3233,7 +3093,7 @@ use_texture_padding = false
 4:32/0 = 0
 4:32/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:32/0/physics_layer_0/angular_velocity = 0.0
-4:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:32/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.25, 3.4375, 2.375, 3.4375, 8, -8, 8)
 5:32/0 = 0
 5:32/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:32/0/physics_layer_0/angular_velocity = 0.0
@@ -3307,7 +3167,7 @@ use_texture_padding = false
 4:33/0 = 0
 4:33/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:33/0/physics_layer_0/angular_velocity = 0.0
-4:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:33/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3.1875, -8, 3.1875, 8, -8, 8)
 5:33/0 = 0
 5:33/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:33/0/physics_layer_0/angular_velocity = 0.0
@@ -3394,22 +3254,7 @@ sources/0 = SubResource("TileSetAtlasSource_uwo5h")
 
 [node name="topdown" type="Node2D"]
 
-[node name="TDplayer" type="CharacterBody2D" parent="." groups=["Player"]]
-z_index = 1
-position = Vector2(200, 134)
-script = ExtResource("1_jaqct")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TDplayer"]
-visible = false
-shape = SubResource("CapsuleShape2D_pygns")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TDplayer"]
-scale = Vector2(2, 2.0625)
-sprite_frames = SubResource("SpriteFrames_mjxps")
-animation = &"walk_up"
-
-[node name="Camera2D" type="Camera2D" parent="TDplayer"]
-zoom = Vector2(2, 2)
+[node name="TDplayer" parent="." instance=ExtResource("1_ie81a")]
 
 [node name="world" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lpytq")
@@ -3418,3 +3263,13 @@ layer_0/tile_data = PackedInt32Array(0, 458752, 9, 65536, 458752, 10, 1, 524288,
 
 [node name="PlayerHUD" parent="." groups=["HUD"] instance=ExtResource("4_vgikf")]
 visible = false
+
+[node name="ChangeLVL" parent="." instance=ExtResource("4_g636m")]
+script = ExtResource("5_5lgjy")
+next_level = "topdown_2"
+
+[node name="Coin" parent="." instance=ExtResource("6_54fn0")]
+position = Vector2(63, 276)
+
+[node name="Coin2" parent="." instance=ExtResource("6_54fn0")]
+position = Vector2(604, 24)
