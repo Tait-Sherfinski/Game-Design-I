@@ -21,6 +21,11 @@ var menu_instance = null
 
 func pickup_money(value):
 	data.money += value
+	
+func pickup_health(value):
+	data.health += value
+	data.health = clamp(data.health, 0, data.max_health)
+	print(data.health)
 
 func _ready():
 	p_HUD.show()

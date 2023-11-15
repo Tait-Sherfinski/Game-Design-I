@@ -45,11 +45,10 @@ animations = [{
 script = ExtResource("1_s42r0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(296, 220)
 sprite_frames = SubResource("SpriteFrames_1lfig")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(296, 220)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_dbwfp")

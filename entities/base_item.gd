@@ -8,14 +8,13 @@ var current_time = 0.0
 var time_to_despawn = 13
 
 func _ready():
-	pass
+	$AnimatedSprite2D.play("default")
 
 func remove():
 	value = 0
 	queue_free()
 	
 func interact(player):
-	pass
 	remove()
 	
 func _init(default_value: int = 1):
