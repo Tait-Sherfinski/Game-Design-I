@@ -29,6 +29,7 @@ func _ready():
 
 func _process(delta):
 	var p_health = player.data.health
+	var p_money = player.data.money
 	var full_hearts = floor(p_health / 20)
 	var remainder = int(p_health) % 20
 	
