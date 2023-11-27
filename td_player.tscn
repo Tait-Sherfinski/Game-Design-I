@@ -298,7 +298,7 @@ animations = [{
 "speed": 13.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_jw1ue")
 }, {
 "duration": 1.0,
@@ -315,7 +315,7 @@ animations = [{
 "speed": 13.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_rq388")
 }, {
 "duration": 1.0,
@@ -332,7 +332,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_bpi8s")
 }, {
 "duration": 1.0,
@@ -349,7 +349,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_j6cy4")
 }, {
 "duration": 1.0,
@@ -378,8 +378,7 @@ shape = SubResource("CapsuleShape2D_pygns")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2.0625)
 sprite_frames = SubResource("SpriteFrames_mjxps")
-animation = &"swipe_charge"
-frame_progress = 0.735833
+animation = &"swipe_up"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
