@@ -31,8 +31,8 @@ debug_color = Color(1, 0, 0.0784314, 0.419608)
 [node name="RayCast2DM" type="RayCast2D" parent="."]
 target_position = Vector2(-50, 0)
 
-[node name="RayCast2D2R" type="RayCast2D" parent="."]
+[node name="RayCast2DR" type="RayCast2D" parent="."]
 target_position = Vector2(-48, -24)
 
-[node name="RayCast2D3L" type="RayCast2D" parent="."]
+[node name="RayCast2DL" type="RayCast2D" parent="."]
 target_position = Vector2(-48, 24)
