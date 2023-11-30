@@ -4,14 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://v8ei7t0stcqy" path="res://Assets/Slash.png" id="2_fnpkn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y7tla"]
-radius = 9.0
 
 [node name="slash" type="Area2D" groups=["slash"]]
 script = ExtResource("1_738s4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(1, -1)
+position = Vector2(-3, -1)
 shape = SubResource("CircleShape2D_y7tla")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
