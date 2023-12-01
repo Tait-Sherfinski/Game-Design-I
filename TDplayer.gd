@@ -27,6 +27,8 @@ var slash_scene = preload("res://entities/attacks/slash.tscn")
 var menu_scene = preload("res://my_gui.tscn")
 var menu_instance = null
 
+signal health_depleted
+
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 
 func get_direction_name():
@@ -80,7 +82,18 @@ func _ready():
 	menu_instance.hide()
 	
 func take_damage(dmg):
-	pass
+	if damage_lock == 0.0:
+		data.health -= dmg
+		data.state = STATES.DAMAGED
+		damage_lock = 0.5
+		animation_lock = dmg * 0.005
+		
+		if data.health <= 0:
+			data.states = STATES.DEAD
+			await get_tree().create_timer(0.5).timeout
+			health_depleted.emit()
+		else:
+			pass
 
 func _physics_process(delta):
 	animation_lock = max(animation_lock-delta, 0.0)
