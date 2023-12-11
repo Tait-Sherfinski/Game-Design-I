@@ -26,6 +26,7 @@ var charge_start_time = 0.0
 var slash_scene = preload("res://entities/attacks/slash.tscn")
 var menu_scene = preload("res://my_gui.tscn")
 var attack_sound = preload("res://Assets/sounds/slash.wav")
+var damage_shader = preload("res://Assets/shaders/take_damage.tres")
 var menu_instance = null
 
 signal health_depleted
@@ -91,7 +92,8 @@ func take_damage(dmg):
 		data.state = STATES.DAMAGED
 		damage_lock = 0.5
 		animation_lock = dmg * 0.005
-		
+		$AnimatedSprite2D.material = damage_shader.duplicate()
+		$AnimatedSprite2D.material.set_shader_parameter("intensity", 0.5)
 		if data.health <= 0:
 			data.states = STATES.DEAD
 			await get_tree().create_timer(0.5).timeout
@@ -104,6 +106,8 @@ func _physics_process(delta):
 	damage_lock = max(damage_lock - delta, 0)
 	
 	if animation_lock == 0 and data.state != STATES.DEAD:
+		if data.state == STATES.DAMAGED and max(damage_lock-delta, 0.0):
+			$AnimatedSprite2D.material = null
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
 			
@@ -134,6 +138,13 @@ func _physics_process(delta):
 				charged_attack()
 			else:
 				data.state = STATES.IDLE
+				
+	if Input.is_action_just_pressed("ui_select"):
+		for entity in get_tree().get_nodes_in_group("Interactable"):
+			if entity.in_range(self):
+				entity.interact(self)
+				data.state = STATES.IDLE
+				return
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		menu_instance.show()
